@@ -1,0 +1,24 @@
+[package]
+name = "swiss-qr-payment"
+version = "1.0.0"
+edition = "2021"
+authors = ["Nicola Spieser <spieser.nicola@gmail.com>"]
+description = "Swiss QR-bill payment code generator — SIX IG v2.3 compliant"
+license = "MIT"
+repository = "https://github.com/nicola-spieser/swiss-qr-payment"
+keywords = ["swiss", "qr-bill", "payment", "qr-rechnung", "einzahlungsschein"]
+categories = ["finance"]
+readme = "README.md"
+
+[dependencies]
+qrcode = "0.14"
+image = "0.25"
+thiserror = "2"
+serde = { version = "1", features = ["derive"], optional = true }
+serde_json = { version = "1", optional = true }
+
+[features]
+default = []
+serde = ["dep:serde", "dep:serde_json"]
+
+[dev-dependencies]
