@@ -79,6 +79,44 @@ println!("{}", bill.to_spc());
 bill.save_png("qr.png", 400).unwrap();
 ```
 
+## Examples
+
+See [`examples/`](examples/) for complete working examples (QRR, SCOR, minimal bill).
+
+```bash
+# Python
+cd python
+pip install -e ".[all]"
+python ../examples/python_example.py
+```
+
+## Development
+
+### Python
+
+```bash
+cd python
+pip install -e ".[all]"
+
+# Run tests
+pytest tests/
+
+# Lint
+ruff check src/ tests/
+```
+
+### Rust
+
+```bash
+cd rust
+
+# Run tests
+cargo test
+
+# Clippy lint
+cargo clippy
+```
+
 ## Reference Types
 
 | Type | Description | IBAN requirement |
