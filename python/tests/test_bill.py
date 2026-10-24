@@ -1,5 +1,6 @@
 """Tests for QRBill core."""
-import sys, os
+import sys
+import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 import pytest
@@ -142,3 +143,19 @@ class TestConvenience:
         bill = _basic_bill()
         img = bill.qr_image()
         assert img is not None
+
+
+class TestPdfRenderer:
+    def test_swiss_cross_restores_black_fill(self):
+        """Text drawn after the Swiss cross must not inherit its white fill."""
+        pytest.importorskip("reportlab")
+        import io
+
+        from reportlab.lib.colors import black
+        from reportlab.pdfgen import canvas
+
+        from swiss_qr_payment.pdf_renderer import _draw_swiss_cross
+
+        c = canvas.Canvas(io.BytesIO())
+        _draw_swiss_cross(c, 100, 100)
+        assert c._fillColorObj == black

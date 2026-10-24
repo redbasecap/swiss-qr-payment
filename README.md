@@ -21,10 +21,12 @@ Available in **Python** and **Rust**.
 
 ### Python
 
+Not yet on PyPI; install straight from GitHub:
+
 ```bash
-pip install swiss-qr-payment
+pip install "swiss-qr-payment @ git+https://github.com/redbasecap/swiss-qr-payment#subdirectory=python"
 # For PDF rendering:
-pip install swiss-qr-payment[pdf]
+pip install "swiss-qr-payment[pdf] @ git+https://github.com/redbasecap/swiss-qr-payment#subdirectory=python"
 ```
 
 ```python
@@ -56,9 +58,11 @@ bill.to_pdf("slip.pdf")
 
 ### Rust
 
+Not yet on crates.io; use the Git dependency:
+
 ```toml
 [dependencies]
-swiss-qr-payment = "1.0"
+swiss-qr-payment = { git = "https://github.com/redbasecap/swiss-qr-payment" }
 ```
 
 ```rust

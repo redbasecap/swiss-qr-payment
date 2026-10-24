@@ -77,7 +77,6 @@ LABELS = {
 
 def render_qr_bill_pdf(bill: "QRBill", path: str, full_page: bool = True):
     """Render a QR-bill payment slip as PDF."""
-    from .validate import format_iban, format_amount, format_qr_reference, format_creditor_reference
 
     labels = LABELS.get(bill.language, LABELS["de"])
 
@@ -296,6 +295,7 @@ def _draw_swiss_cross(c, cx: float, cy: float):
     bw, bh = s * 0.35, s * 0.7
     c.rect(x + (s - bw) / 2, y + (s - bh) / 2, bw, bh, fill=1, stroke=0)
     c.rect(x + (s - bh) / 2, y + (s - bw) / 2, bh, bw, fill=1, stroke=0)
+    c.setFillColor(black)  # restore, otherwise following text is drawn white
 
 
 def _draw_corner_box(c, x: float, y: float, w: float, h: float):

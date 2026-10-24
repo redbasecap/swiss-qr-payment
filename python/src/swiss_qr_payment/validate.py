@@ -21,7 +21,7 @@ def validate_iban(iban: str) -> bool:
     if len(clean) != 21:
         raise ValueError(f"IBAN must be 21 characters, got {len(clean)}")
 
-    if not clean[:2] in ("CH", "LI"):
+    if clean[:2] not in ("CH", "LI"):
         raise ValueError(f"Only CH/LI IBANs are allowed, got {clean[:2]}")
 
     if not clean[2:].replace(clean[:2], "").replace(" ", ""):
