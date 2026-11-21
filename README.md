@@ -1,5 +1,7 @@
 # swiss-qr-payment
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/redbasecap)
+
 Swiss QR-bill payment library — compliant with [SIX Implementation Guidelines v2.3](https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.3-en.pdf).
 
 Available in **Python** and **Rust**.
